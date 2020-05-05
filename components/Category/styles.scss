@@ -1,0 +1,37 @@
+.categoryList {
+  text-align: center;
+
+  .categoryItemWrapper {
+    padding: 0 6px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+
+.categoryItem {
+  position: relative;
+  margin-top: 5px;
+  width: 114px;
+  height: 96px;
+
+  .img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .title {
+    position: absolute;
+    background: rgba(0, 0, 0, 1);
+    width: 80px;
+    height: 22px;
+    top: 50%;
+    font-size: 12px;
+    line-height: 22px;
+    color: white;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+    border-radius: 12px;
+  }
+}

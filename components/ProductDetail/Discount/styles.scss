@@ -1,0 +1,33 @@
+.selectSku {
+  display: flex;
+  padding: 15px;
+}
+
+.select {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.tipsWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tips {
+  padding-left: 15px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.img {
+  width: 8px;
+  height: 14px;
+}
+
+.price {
+  color: rgba(255, 29, 92, 1);
+}

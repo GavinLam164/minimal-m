@@ -1,0 +1,33 @@
+.productItem {
+  display: flex;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.img {
+  width: 80px;
+  height: 80px;
+}
+
+.baseInfo {
+  padding-left: 8px;
+}
+
+.title {
+  font-size: 14px;
+  color: rgba(51, 51, 51, 1);
+}
+
+.desc {
+  margin-top: 7px;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.price {
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: bold;
+  color: rgba(255, 29, 92, 1);
+}

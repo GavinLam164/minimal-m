@@ -1,0 +1,31 @@
+.bottom {
+  border-right-color: red;
+  padding: 8px 0;
+  height: 40px;
+  line-height: 40px;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px #DCDCDC solid;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .text {
+    padding-top: 6px;
+    font-size: 12px;
+    line-height: 12px;
+    color: rgba(153, 153, 153, 1);
+
+    &.actived {
+      color: rgba(255, 29, 92, 1);
+    }
+  }
+}

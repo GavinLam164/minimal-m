@@ -1,0 +1,184 @@
+.detailWrapper {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  padding-bottom: 46px;
+  box-sizing: border-box;
+}
+
+.main {
+  flex: 1;
+  overflow-y: scroll;
+}
+
+.bottom {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.more {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 12px;
+  width: 18px;
+  height: 5px;
+}
+
+.bgWrapper {
+  position: relative;
+  font-size: 0;
+
+  .bg {
+    width: 100vw;
+  }
+
+  .orderStatus {
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 24px;
+    color: white;
+    transform: translateY(-50%);
+  }
+
+}
+
+.recevierInfo {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+
+  .img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .recevier {
+    font-size: 12px;
+    margin-left: 15px;
+    font-weight: 400;
+    color: rgba(102, 102, 102, 1);
+
+    .info {
+      display: flex;
+
+      .name {
+        flex: 1;
+      }
+
+      .phone {
+        flex: 1;
+      }
+    }
+
+    .address {
+      margin-top: 5px;
+    }
+  }
+
+}
+
+.skuList {
+  padding: 10px 16px;
+  display: flex;
+
+  .skuWrapper {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .skuInfo {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(99, 99, 99, 1);
+    margin-left: 12px;
+
+    .title {
+      width: 200px;
+      /*必须是固定宽度值*/
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+      /*超出部分隐藏*/
+    }
+
+    .spec {}
+  }
+
+  .priceInfo {
+    text-align: right;
+    font-weight: 400;
+    color: rgba(99, 99, 99, 1);
+
+    .price {}
+
+    .num {}
+  }
+}
+
+.orderInfo {
+  margin-top: 10px;
+
+  .title {
+    border-left: 2px rgba(244, 12, 12, 1) solid;
+    padding-left: 5px;
+  }
+}
+
+.list {
+  padding-bottom: 10px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(99, 99, 99, 1);
+
+  .arrow {
+    width: 7px;
+    height: 12px;
+  }
+
+  .title {}
+
+  .desc {}
+}
+
+.btns {
+  padding: 10px 15px;
+  text-align: right;
+
+  .recevie,
+  .pay {
+    outline: none;
+    border: none;
+    width: 68px;
+    height: 22px;
+    border-radius: 21px;
+    font-size: 12px;
+    color: white;
+  }
+
+  .recevie {
+    background: rgba(255, 179, 70, 1);
+    margin-right: 10px;
+  }
+
+  .pay {
+    background: rgba(241, 35, 31, 1);
+  }
+}

@@ -1,0 +1,31 @@
+.basicInfo {
+  padding: 12px 15px;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.price {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255, 29, 92, 1);
+}
+
+.other {
+  margin-top: 20px;
+}
+
+.freight,
+.salesVolume {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.salesVolume {
+  margin-left: 72px;
+}

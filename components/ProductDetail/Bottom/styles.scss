@@ -1,0 +1,55 @@
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #ddd;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  padding: 0px 18px;
+
+  .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 12px;
+  }
+
+  .img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .text {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(102, 102, 102, 1);
+  }
+}
+
+.right {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+
+  .priceWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 104px;
+    height: 46px;
+    color: rgba(255, 255, 255, 1);
+    background: rgba(255, 179, 70, 1);
+  }
+
+  .pay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 104px;
+    height: 46px;
+    color: rgba(255, 255, 255, 1);
+    background: rgba(255, 29, 92, 1);
+  }
+}
