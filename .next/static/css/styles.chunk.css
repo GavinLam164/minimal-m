@@ -35,41 +35,6 @@
     .icon___wpXj4 .text___1QFy7.actived___R1SRB {
       color: #ff1d5c; }
 
-.header___R3-1f {
-  position: relative;
-  padding: 10px 12px;
-  border-bottom: 1px #ddd solid; }
-
-.left___3g1hf {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 14px;
-  font-weight: 400;
-  color: #333333; }
-
-.back___1sD3O {
-  width: 9px;
-  height: 16px;
-  padding: 15px;
-  padding-right: 20px; }
-
-.text___1L6hm {
-  text-align: center;
-  font-size: 18px;
-  font-weight: 400;
-  color: #1a1a1a; }
-
-.right___2Imo5 {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 14px;
-  font-weight: 400;
-  color: #333333; }
-
 /**
  * Swiper 4.5.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -764,7 +729,8 @@ button.swiper-pagination-bullet___7o7Q7 {
     padding-bottom: 14px; }
   .seckill___1UdQ9 .listWrapper___3v1UO {
     display: flex;
-    justify-content: space-around; }
+    justify-content: space-around;
+    flex-wrap: wrap; }
 
 .seckillItem___1d9b9 {
   display: flex;
@@ -793,327 +759,39 @@ button.swiper-pagination-bullet___7o7Q7 {
     outline: none;
     color: #f83c70; }
 
-.basicInfo___2ore0 {
-  padding: 12px 15px; }
-
-.title___2tzYc {
-  font-size: 15px;
-  font-weight: 400;
-  color: #333333; }
-
-.price___2-X8b {
-  margin-top: 15px;
-  font-size: 18px;
-  font-weight: 400;
-  color: #ff1d5c; }
-
-.other___3InEf {
-  margin-top: 20px; }
-
-.freight___3o7po,
-.salesVolume___2p7av {
-  font-size: 13px;
-  font-weight: 400;
-  color: #999999; }
-
-.salesVolume___2p7av {
-  margin-left: 72px; }
-
 .divider___30etv {
   width: 100%;
   background: #efeeee; }
 
-.selectSku___1bzyB {
-  display: flex;
-  padding: 15px; }
-
-.select___ZLhQ5 {
-  font-size: 14px;
-  font-weight: 400;
-  color: #999999; }
-
-.tipsWrapper___1bolz {
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; }
-
-.tips___1o4NF {
-  padding-left: 15px;
-  font-size: 14px;
-  font-weight: 400;
-  color: #333333; }
-
-.img___3EJ7s {
-  width: 8px;
-  height: 14px; }
-
-.price___Sg3Cc {
-  color: #ff1d5c; }
-
-.selectSku___1lul0 {
-  display: flex;
-  padding: 15px; }
-
-.select___3Cv1B {
-  font-size: 14px;
-  font-weight: 400;
-  color: #999999; }
-
-.tipsWrapper___308z7 {
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; }
-
-.tips___30ln1 {
-  padding-left: 15px;
-  font-size: 14px;
-  font-weight: 400;
-  color: #333333; }
-
-.img___PDecc {
-  width: 8px;
-  height: 14px; }
-
-.bottom___39V9w {
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid #ddd; }
-
-.left___2CXDZ {
-  display: flex;
-  align-items: center;
-  padding: 0px 18px; }
-  .left___2CXDZ .icon___10gQp {
+.categoryList___3vwwE {
+  text-align: center; }
+  .categoryList___3vwwE .categoryItemWrapper___YWHRG {
+    padding: 0 6px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 6px 12px; }
-  .left___2CXDZ .img___1O9YI {
-    width: 16px;
-    height: 16px; }
-  .left___2CXDZ .text___1POJ- {
-    font-size: 12px;
-    font-weight: 400;
-    color: #666666; }
+    justify-content: space-around;
+    flex-wrap: wrap; }
 
-.right___1gMv8 {
-  display: flex;
-  justify-content: end;
-  align-items: center; }
-  .right___1gMv8 .priceWrapper___2M3IC {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 104px;
-    height: 46px;
-    color: white;
-    background: #ffb346; }
-  .right___1gMv8 .pay___2SFrf {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 104px;
-    height: 46px;
-    color: white;
-    background: #ff1d5c; }
-
-@charset "UTF-8";
-.detailWrapper___1oSk1 {
-  display: flex;
-  height: 100vh;
-  flex-direction: column;
-  padding-bottom: 46px;
-  box-sizing: border-box; }
-
-.main___1Ma59 {
-  flex: 1;
-  overflow-y: scroll; }
-
-.bottom___3-cit {
-  width: 100%;
-  position: fixed;
-  bottom: 0; }
-
-.more___3aY9d {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 12px;
-  width: 18px;
-  height: 5px; }
-
-.bgWrapper___SgL5g {
+.categoryItem___37jbI {
   position: relative;
-  font-size: 0; }
-  .bgWrapper___SgL5g .bg___205rT {
-    width: 100vw; }
-  .bgWrapper___SgL5g .orderStatus___3wPPH {
-    font-size: 16px;
+  margin-top: 5px;
+  width: 96px;
+  height: 96px; }
+  .categoryItem___37jbI .img___1wdjR {
+    width: 100%;
+    height: 100%; }
+  .categoryItem___37jbI .title___3DNhp {
     position: absolute;
-    top: 50%;
-    left: 24px;
-    color: white;
-    transform: translateY(-50%); }
-
-.recevierInfo___33l0x {
-  display: flex;
-  align-items: center;
-  padding: 12px 18px; }
-  .recevierInfo___33l0x .img___mmi18 {
-    width: 22px;
-    height: 22px; }
-  .recevierInfo___33l0x .recevier___3DEH1 {
-    font-size: 12px;
-    margin-left: 15px;
-    font-weight: 400;
-    color: #666666; }
-    .recevierInfo___33l0x .recevier___3DEH1 .info___15T7N {
-      display: flex; }
-      .recevierInfo___33l0x .recevier___3DEH1 .info___15T7N .name___2S6yI {
-        flex: 1; }
-      .recevierInfo___33l0x .recevier___3DEH1 .info___15T7N .phone___20UiG {
-        flex: 1; }
-    .recevierInfo___33l0x .recevier___3DEH1 .address___3cGZ- {
-      margin-top: 5px; }
-
-.skuList___Pt9UE {
-  padding: 10px 16px;
-  display: flex; }
-  .skuList___Pt9UE .skuWrapper___1feRl {
-    flex: 1;
-    display: flex;
-    justify-content: space-between; }
-  .skuList___Pt9UE .img___mmi18 {
-    width: 60px;
-    height: 60px; }
-  .skuList___Pt9UE .skuInfo___2-ACy {
-    font-size: 12px;
-    font-weight: 400;
-    color: #636363;
-    margin-left: 12px; }
-    .skuList___Pt9UE .skuInfo___2-ACy .title___29KT- {
-      width: 200px;
-      /*必须是固定宽度值*/
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 3;
-      overflow: hidden;
-      /*超出部分隐藏*/ }
-  .skuList___Pt9UE .priceInfo___2n_0t {
-    text-align: right;
-    font-weight: 400;
-    color: #636363; }
-
-.orderInfo___2KEib {
-  margin-top: 10px; }
-  .orderInfo___2KEib .title___29KT- {
-    border-left: 2px #f40c0c solid;
-    padding-left: 5px; }
-
-.list___20AbQ {
-  padding-bottom: 10px;
-  padding-left: 14px;
-  padding-right: 14px; }
-
-.item___3RJPd {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-  font-size: 12px;
-  font-weight: 400;
-  color: #636363; }
-  .item___3RJPd .arrow___6_4lo {
-    width: 7px;
-    height: 12px; }
-
-.btns___2uMZz {
-  padding: 10px 15px;
-  text-align: right; }
-  .btns___2uMZz .recevie___1RMsX,
-  .btns___2uMZz .pay___3RSdT {
-    outline: none;
-    border: none;
-    width: 68px;
+    background: black;
+    width: 80px;
     height: 22px;
-    border-radius: 21px;
+    top: 50%;
     font-size: 12px;
-    color: white; }
-  .btns___2uMZz .recevie___1RMsX {
-    background: #ffb346;
-    margin-right: 10px; }
-  .btns___2uMZz .pay___3RSdT {
-    background: #f1231f; }
-
-.bottom___11LXE {
-  display: flex;
-  justify-content: space-between; }
-
-.left___32pE7 {
-  display: flex;
-  align-items: center;
-  padding: 14px 18px; }
-  .left___32pE7 .img___3MXjt {
-    width: 20px;
-    height: 20px; }
-  .left___32pE7 .all___2ulD3 {
-    padding-left: 4px;
-    font-size: 13px;
-    font-weight: 400;
-    color: #666666; }
-
-.right___j1f8- {
-  display: flex;
-  justify-content: end;
-  align-items: center; }
-  .right___j1f8- .priceWrapper___3-HMC {
-    padding-right: 6px; }
-    .right___j1f8- .priceWrapper___3-HMC .total___HblCb {
-      font-size: 14px;
-      font-weight: 400;
-      color: #333333; }
-    .right___j1f8- .priceWrapper___3-HMC .price___kbe9s {
-      font-size: 16px;
-      font-weight: bold;
-      color: #ff1d5c; }
-  .right___j1f8- .pay___2T3Gq {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 104px;
-    height: 46px;
+    line-height: 22px;
     color: white;
-    background: #ff1d5c; }
-
-.productItem___kAhh8 {
-  display: flex;
-  padding: 12px;
-  border-bottom: 1px solid #ddd; }
-
-.img___8lhQB {
-  width: 80px;
-  height: 80px; }
-
-.baseInfo___2EXSw {
-  padding-left: 8px; }
-
-.title___2zppf {
-  font-size: 14px;
-  color: #333333; }
-
-.desc___3zC3k {
-  margin-top: 7px;
-  font-size: 12px;
-  font-weight: 400;
-  color: #999999; }
-
-.price___3IR8k {
-  margin-top: 16px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #ff1d5c; }
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.8;
+    border-radius: 12px; }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/

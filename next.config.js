@@ -11,6 +11,8 @@ module.exports = withCss(
     },
     webpack(config, options) {
       config.resolve.alias["@components"] = path.join(__dirname, "components");
+ config.resolve.alias["@api"] = path.join(__dirname, "api");
+
       return config;
     },
   })

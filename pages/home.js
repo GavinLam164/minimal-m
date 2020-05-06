@@ -5,21 +5,36 @@ import Search from "@components/Home/Search";
 import IconList from "@components/Home/IconList";
 import Divider from "@components/Common/Divider";
 import Seckill from "@components/Home/Seckill";
-import TabBar from "@components/Layout/Home/TabBar";
+import {findHomeList} from '@api/home'
+import Router from 'next/router'
 
 export default class Home extends Component {
   static async getInitialProps({ pathname }) {
-    return { pathname };
+    const res = await findHomeList()
+    const { bannerList, spuList, iconList } = res.data
+    return { pathname, bannerList, spuList, iconList };
+  }
+
+  goDetail =(spuId) => {
+    Router.push({
+      pathname: '/productDetail',
+      query: {
+        spuId
+      }
+    })
   }
 
   render() {
+    const {bannerList = [], spuList = [], iconList,} = this.props;
     return (
       <Layout path={this.props.pathname} tab>
-        <Banner />
+        <Banner bannerList={bannerList}/>
         <Search />
-        <IconList />
+        <IconList iconList={iconList}/>
+        {
+          spuList.map((v) => <Seckill key={v.configId} spuList={v.spuList} title={v.title} onClick={this.goDetail}/>)
+        }
         <Divider height={10} />
-        <Seckill />
       </Layout>
     );
   }

@@ -16,7 +16,6 @@
   box-sizing: border-box;
   width: 100%;
 
-
   .searchWrapper {
     height: 28px;
     display: flex;
@@ -38,7 +37,6 @@
     }
   }
 }
-
 
 .iconList {
   padding: 12px;
@@ -99,9 +97,9 @@
   .listWrapper {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
   }
 }
-
 
 .seckillItem {
   display: flex;

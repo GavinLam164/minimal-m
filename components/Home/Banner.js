@@ -10,16 +10,20 @@ export default class Banner extends Component {
     });
   }
 
+  componentDidUpdate(){
+  }
+
   render() {
+    const {bannerList = []} = this.props
     return (
       <div>
         <div className={["swiper-container", styles.swiper].join(" ")}>
           <div className="swiper-wrapper">
-            {[1, 2, 3, 4].map((key) => (
-              <div className="swiper-slide" key={key}>
+            {bannerList.map(({configId, image}) => (
+              <div className="swiper-slide" key={configId}>
                 <img
                   className={styles.img}
-                  src={`/static/banner/banner${key}.png`}
+                  src={image}
                 />
               </div>
             ))}

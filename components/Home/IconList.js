@@ -2,15 +2,17 @@ import { Component } from "react";
 import styles from "./styles.scss";
 import Icon from "./Icon";
 
-const iconList = ["上新", "推荐", "榜单", "特卖"];
 
 export default class IconList extends Component {
   render() {
+    const {iconList} = this.props
+    console.log(iconList)
+ 
     return (
       <div className={styles.iconList}>
-        {iconList.map((key) => (
-          <Icon src={`/static/icon/${key}.png`} text={key} key={key} />
-        ))}
+      {iconList.map(({configId, title, image}) => (
+        <Icon src={image} text={title} key={configId} />
+      ))}
       </div>
     );
   }

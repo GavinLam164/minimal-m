@@ -31,12 +31,13 @@ const categoryList = [
 
 export default class CategoryList extends Component {
   render() {
+    const {categoryList} = this.props
     return (
       <div className={styles.categoryList}>
-        <div className={styles.title}>全球秒杀</div>
+        <div className={styles.title}>热门类目</div>
         <div className={styles.categoryItemWrapper}>
-          {categoryList.map((item) => (
-            <CategoryItem key={item.title} {...item} />
+          {categoryList.map(({categoryId, categoryName, image}) => (
+            <CategoryItem key={categoryId} title={categoryName} src={image} />
           ))}
         </div>
       </div>
