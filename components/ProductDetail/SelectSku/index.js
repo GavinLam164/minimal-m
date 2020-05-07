@@ -52,14 +52,18 @@ export default class SelectSku extends Component {
     return [styles.confirm, this.state.selectSpecValueList.length > 0 ? styles.actived: ''].join(' ')
   }
 
-  confirmSku = () => {
+  updateSelectSku = () => {
     const selectKey = this.state.selectSpecValueList.join('_')
-    this.props.onSelectSku(this.map[selectKey])
     this.setState({
-      visible: false,
       selectSku: this.map[selectKey]
     })
-    
+  }
+
+  confirmSku = () => {
+    this.props.onSelectSku(this.state.selectSku)
+    this.setState({
+      visible: false,
+    })
   }
 
   render() {
@@ -79,8 +83,8 @@ export default class SelectSku extends Component {
       <Mask visible={this.state.visible}>
         <Content>
         <ProductItem title={spuInfo.spuName}
-          src={spuInfo.bannerImageList[0].spuImagePath}
-          price={spuInfo.spuPrice}
+          src={!selectSku ? spuInfo.bannerImageList[0].spuImagePath: selectSku.skuImage.skuImagePath}
+          price={!selectSku ? spuInfo.spuPrice: selectSku.skuPrice}
           desc={spuInfo.spuDesc}
           />
         <div className={styles.spec}>
@@ -95,6 +99,8 @@ export default class SelectSku extends Component {
                     selectSpecValueList[index] = specValueId
                     this.setState({
                       selectSpecValueList:[...selectSpecValueList]
+                    }, () => {
+                      this.updateSelectSku()
                     })
                   }} 
                   className={this.specValueClasses(specValueId)} key={specValueId}>{specValueName}</div>

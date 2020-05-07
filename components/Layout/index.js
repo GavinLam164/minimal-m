@@ -8,7 +8,9 @@ export default class Layout extends Component {
     const { path, tab } = this.props;
     return (
       <div className={styles.container}>
+        <div className={tab ? styles.detailWrapper: ''}>
         <Main>{this.props.children}</Main>
+        </div>
         {tab && <TabBar path={path} />}
       </div>
     );

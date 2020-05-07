@@ -26,3 +26,18 @@ export const findCartList = () => get('/cart/list', {}, {
 })
 
 export const findCategoryList = () => get('/category/back/findByParentId')
+
+
+export const selectCart = (params) => get('/cart/select', params, {
+    headers: {
+        'token': '345038b05aa4dafa4329b9577d5f7e38'
+    }
+})
+
+
+export const selectList = () => get('/cart/selectList', null, {
+    headers: {
+        'token': '345038b05aa4dafa4329b9577d5f7e38'
+    }
+})
+

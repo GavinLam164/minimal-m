@@ -1,12 +1,18 @@
 .bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   border-right-color: red;
   padding: 8px 0;
   height: 40px;
   line-height: 40px;
   display: flex;
   justify-content: space-around;
+  background-color: white;
   border-top: 1px #DCDCDC solid;
 }
+
+
 
 .icon {
   display: flex;

@@ -4,3 +4,11 @@
   display: flex;
   flex-direction: column;
 }
+
+.detailWrapper {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  padding-bottom: 55px;
+  box-sizing: border-box;
+}
