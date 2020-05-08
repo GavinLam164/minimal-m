@@ -5,89 +5,7 @@ import React from 'react';
 import PopupCascader from 'rmc-cascader/lib/Popup'
 import Cascader from 'rmc-cascader/lib/Cascader';
 import arrayTreeFilter from 'array-tree-filter';
-
-const globalData =  [
-    {
-      label: '北京',
-      value: '01',
-      children: [
-        {
-          label: '东城区',
-          value: '01-1',
-        },
-        {
-          label: '西城区',
-          value: '01-2',
-        },
-        {
-          label: '崇文区',
-          value: '01-3',
-        },
-        {
-          label: '宣武区',
-          value: '01-4',
-        },
-      ],
-    },
-    {
-      label: '浙江',
-      value: '02',
-      children: [
-        {
-          label: '杭州',
-          value: '02-1',
-          children: [
-            {
-              label: '西湖区',
-              value: '02-1-1',
-            },
-            {
-              label: '上城区',
-              value: '02-1-2',
-            },
-            {
-              label: '江干区',
-              value: '02-1-3',
-            },
-            {
-              label: '下城区',
-              value: '02-1-4',
-            },
-          ],
-        },
-        {
-          label: '宁波',
-          value: '02-2',
-          children: [
-            {
-              label: 'xx区',
-              value: '02-2-1',
-            },
-            {
-              label: 'yy区',
-              value: '02-2-2',
-            },
-          ],
-        },
-        {
-          label: '温州',
-          value: '02-3',
-        },
-        {
-          label: '嘉兴',
-          value: '02-4',
-        },
-        {
-          label: '湖州',
-          value: '02-5',
-        },
-        {
-          label: '绍兴',
-          value: '02-6',
-        },
-      ],
-    },
-  ];
+import styles from './styles.scss'
 
 const COLS = 3;
 
@@ -100,9 +18,8 @@ export default class Demo extends React.Component {
   }
 
   onChange = (value) => {
-    console.log('onChange', value);
+    this.props.onChange(value)
     this.setState({
-      value,
       visible: false,
     });
   }
@@ -119,15 +36,16 @@ export default class Demo extends React.Component {
   }
 
   onPickerChange = (value) => {
-    console.log('picker change', value);
+
   }
 
   getSel() {
-    const value = this.state.value;
+    const value = this.props.value;
+    const{ areaList} = this.props
     if (!value) {
       return '';
     }
-    const treeChildren = arrayTreeFilter(globalData, (c, level) => {
+    const treeChildren = arrayTreeFilter(areaList, (c, level) => {
       return c.value === value[level];
     });
     return treeChildren.map((v) => {
@@ -146,32 +64,26 @@ export default class Demo extends React.Component {
       <Cascader
         rootNativeProps={{ 'data-xx': 'yy' }}
         onChange={this.onPickerChange}
-        data={globalData}
+        data={this.props.areaList}
         cols={COLS}
         onScrollChange={this.onScrollChange}
       />
     );
-    return (<div style={{ padding: 10 }}>
-      <h3>popup cascader</h3>
-      <p>选择的城市：{this.getSel()}</p>
+    return (
+    <div>
       <PopupCascader
-        cascader={cascader}
-        value={this.state.value}
-        onDismiss={this.onDismiss}
-        onChange={this.onChange}
-        title="Cascader"
-      >
-        <button ref="button">open</button>
+          cascader={cascader}
+          value={this.props.value}
+          onDismiss={this.onDismiss}
+          onChange={this.onChange}
+          title="省市区："
+        >
+        <div className={styles.selectItem} ref="button">
+          <p className={styles.area}><span className={styles.label}>省市区：</span><span className={styles.title}>{this.getSel()}</span></p>
+          <img className={styles.icon} src="/static/icon/arrow.png" />
+        </div>
       </PopupCascader>
-      <h3>just cascader no children</h3>
-      <button onClick={this.outerCtrl}>switch</button>
-      <PopupCascader
-        cascader={cascader}
-        visible={this.state.visible}
-        value={this.state.value}
-        onDismiss={this.onDismiss}
-        onChange={this.onChange}
-      />
-    </div>);
+    </div>
+   );
   }
 }

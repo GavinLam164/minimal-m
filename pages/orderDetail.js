@@ -2,7 +2,7 @@ import { Component, Fragment } from "react";
 import Layout from "@components/Layout";
 import Header from "@components/Common/Header";
 import Divider from "@components/Common/Divider";
-import {selectList} from '@api/home'
+import {selectList,currentSelectAddress} from '@api/home'
 import Router from 'next/router'
 import styles from "./styles.scss";
 
@@ -41,21 +41,41 @@ const OrderInfo = () =>
 export default class OrderDetail extends Component {
   static async getInitialProps({ pathname }) {
     const {data: {skuList, totalPrice}} = await selectList()
-    return { pathname , skuList, totalPrice};
+    const {data: {address, area}} = await currentSelectAddress()
+    return { pathname , skuList, totalPrice, address, area};
   }
 
   constructor(props) {
     super()
-    const {skuList, totalPrice} = props
-    console.log(skuList)
+    const {skuList, totalPrice, address, area} = props
     this.state = {
       skuList, 
-      totalPrice
+      totalPrice,
+      address,
+      area
     }
   }
 
+
+  renderReciverInfo = () => {
+    const {address, area} = this.state;
+    return <div className={styles.recevierInfo}>
+        <img src="/static/icon/位置.png" className={styles.img} />
+        <div className={styles.recevier}>
+          <div className={styles.info}>
+            <span className={styles.name}>姓名：{address.receiver}</span>
+            <span className={styles.phone}>电话：{address.receiverPhone}</span>
+          </div>
+          <div className={styles.address}>
+            {area.areaNamePath}
+            {address.addressDetail}
+          </div>
+        </div>
+      </div>
+  }
+
   render() {
-    const {totalPrice} = this.state;
+    const {totalPrice, address} = this.state;
     return (
       <Layout path={this.props.pathname}>
         <Header
@@ -68,19 +88,18 @@ export default class OrderDetail extends Component {
           <img className={styles.bg} src="/static/img/bg.png" />
           <span className={styles.orderStatus}>买家已付款</span>
         </div>
-        <div className={styles.recevierInfo}>
-          <img src="/static/icon/位置.png" className={styles.img} />
-          <div className={styles.recevier}>
-            <div className={styles.info}>
-              <span className={styles.name}>姓名：</span>
-              <span className={styles.phone}>电话：</span>
+        {
+          address ? 
+            this.renderReciverInfo():
+            <div className={styles.addAddressWrapper} onClick={() => {
+              Router.push({
+                pathname: '/addAddress'
+              })
+            }}>
+              <img src="/static/icon/位置.png" className={styles.img} />
+              <span className={styles.addAddressTitle}>添加地址</span>
             </div>
-            <div className={styles.address}>
-              收货具体地址收货具体地址收货具体位置。收货具体
-              具体地址收货具体位置收货具体地址
-            </div>
-          </div>
-        </div>
+        }
         <Divider height={1} />
         {
           this.state.skuList.map(sku => 

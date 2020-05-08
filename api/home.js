@@ -41,3 +41,27 @@ export const selectList = () => get('/cart/selectList', null, {
     }
 })
 
+export const findAllArea = () => get('/user/findAllArea')
+
+
+export const addAddress = (params) => post('/user/addAddress', params, {
+    headers: {
+        'token': '345038b05aa4dafa4329b9577d5f7e38',
+        'Content-Type': 'application/json'
+    }
+})
+
+
+
+export const currentSelectAddress = (params) => get('/user/currentSelectAddress', params, {
+    headers: {
+        'token': '345038b05aa4dafa4329b9577d5f7e38',
+    }
+})
+
+
+export const getBasicInfo = (params) => get('/user/getBasicInfo', params, {
+    headers: {
+        'token': '345038b05aa4dafa4329b9577d5f7e38',
+    }
+})

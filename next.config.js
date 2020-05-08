@@ -1,5 +1,6 @@
 const withSass = require("@zeit/next-sass");
 const withCss = require("@zeit/next-css");
+const utils = require('./utils')
 const path = require("path");
 
 module.exports = withCss(
@@ -13,7 +14,7 @@ module.exports = withCss(
         if (/node_modules/.test(hz)) {
           return localName;
         }
-        return localName
+        return utils.getLocalIdent(context, localIdentName, localName, options)
       }
     },
     webpack(config, options) {
