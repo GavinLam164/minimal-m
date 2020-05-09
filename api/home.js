@@ -85,3 +85,9 @@ export const setSelectAddress = (params) => post('/user/setSelectAddress', param
         'token': '345038b05aa4dafa4329b9577d5f7e38',
     }
 })
+
+export const cartDelete = (params) => post('/cart/delete', params, {
+    headers: {
+        'token': '345038b05aa4dafa4329b9577d5f7e38',
+    }
+})

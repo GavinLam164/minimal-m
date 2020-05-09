@@ -3,7 +3,7 @@ import Layout from "@components/Layout";
 import Header from "@components/Common/Header";
 import Bottom from "@components/Cart/Bottom";
 import ProductItem from "@components/Common/ProductItem";
-import {findCartList, selectCart} from '@api/home'
+import {findCartList, selectCart, cartDelete} from '@api/home'
 import Router from 'next/router'
 import styles from './styles.scss'
 
@@ -88,13 +88,17 @@ export default class Cart extends Component {
       })}>取消</span> : 
       <span onClick={() => this.setState({
         isEdit: true
-      })}>编辑</span>
+      })}>管理</span>
   }
 
   onPay = () => {
     Router.push({
       pathname: '/orderDetail'
     })
+  }
+
+  onDel = async() => {
+    await cartDelete()
   }
 
   render() {
@@ -118,12 +122,14 @@ export default class Cart extends Component {
           </div>
          </div>
          <div className={styles.bottom2}>
-          <Bottom
-            isAllSelect={this.isAllSelect()}
-            onSelect={this.onSelect}
-            totalPrice={this.state.totalPrice}
-            onPay={this.onPay}
-          />
+            <Bottom
+              isAllSelect={this.isAllSelect()}
+              onSelect={this.onSelect}
+              totalPrice={this.state.totalPrice}
+              onPay={this.onPay}
+              onDel={this.onDel}
+              isEdit={this.state.isEdit}
+            />
          </div>
       </Layout>
     );
