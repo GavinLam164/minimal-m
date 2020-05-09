@@ -60,40 +60,7 @@
   }
 }
 
-.recevierInfo {
-  display: flex;
-  align-items: center;
-  padding: 12px 18px;
 
-  .img {
-    width: 22px;
-    height: 22px;
-  }
-
-  .recevier {
-    flex: 1;
-    font-size: 12px;
-    margin-left: 15px;
-    font-weight: 400;
-    color: rgba(102, 102, 102, 1);
-
-    .info {
-      display: flex;
-
-      .name {
-        flex: 1;
-      }
-
-      .phone {
-        flex: 1;
-      }
-    }
-
-    .address {
-      margin-top: 5px;
-    }
-  }
-}
 
 .skuList {
   padding: 10px 16px;
@@ -126,8 +93,7 @@
       /*超出部分隐藏*/
     }
 
-    .spec {
-    }
+    .spec {}
   }
 
   .priceInfo {
@@ -135,11 +101,9 @@
     font-weight: 400;
     color: rgba(99, 99, 99, 1);
 
-    .price {
-    }
+    .price {}
 
-    .num {
-    }
+    .num {}
   }
 }
 
@@ -171,11 +135,9 @@
     height: 12px;
   }
 
-  .title {
-  }
+  .title {}
 
-  .desc {
-  }
+  .desc {}
 }
 
 .btns {
@@ -225,20 +187,7 @@
   }
 }
 
-.confirmWrapper {
-  padding: 8px 15px;
-  box-sizing: border-box;
-  width: 100%;
-  .confirm {
-    outline: none;
-    width: 100%;
-    border: none;
-    color: white;
-    padding: 8px;
-    border-radius: 25px;
-    background-color: #ff1d5c;
-  }
-}
+
 
 .addAddressWrapper {
   font-size: 14px;

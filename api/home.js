@@ -65,3 +65,23 @@ export const getBasicInfo = (params) => get('/user/getBasicInfo', params, {
         'token': '345038b05aa4dafa4329b9577d5f7e38',
     }
 })
+
+
+export const addressList = () => get('/user/addressList', null, {
+    headers: {
+        'token': '345038b05aa4dafa4329b9577d5f7e38',
+    }
+})
+
+
+export const addressDetail = (params) => get('/user/addressDetail', params, {
+    headers: {
+        'token': '345038b05aa4dafa4329b9577d5f7e38',
+    }
+})
+
+export const setSelectAddress = (params) => post('/user/setSelectAddress', params, {
+    headers: {
+        'token': '345038b05aa4dafa4329b9577d5f7e38',
+    }
+})

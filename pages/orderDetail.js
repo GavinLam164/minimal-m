@@ -2,8 +2,9 @@ import { Component, Fragment } from "react";
 import Layout from "@components/Layout";
 import Header from "@components/Common/Header";
 import Divider from "@components/Common/Divider";
-import {selectList,currentSelectAddress} from '@api/home'
 import Router from 'next/router'
+import ReceiverInfo from '@components/Common/ReceiverInfo';
+import {selectList,currentSelectAddress} from '@api/home'
 import styles from "./styles.scss";
 
 const OrderInfo = () => 
@@ -56,26 +57,14 @@ export default class OrderDetail extends Component {
     }
   }
 
-
-  renderReciverInfo = () => {
-    const {address, area} = this.state;
-    return <div className={styles.recevierInfo}>
-        <img src="/static/icon/位置.png" className={styles.img} />
-        <div className={styles.recevier}>
-          <div className={styles.info}>
-            <span className={styles.name}>姓名：{address.receiver}</span>
-            <span className={styles.phone}>电话：{address.receiverPhone}</span>
-          </div>
-          <div className={styles.address}>
-            {area.areaNamePath}
-            {address.addressDetail}
-          </div>
-        </div>
-      </div>
+  onConfirm = (addressId) => {
+    Router.push({
+        pathname: '/addressList'
+    })
   }
 
   render() {
-    const {totalPrice, address} = this.state;
+    const {totalPrice, address, area} = this.state;
     return (
       <Layout path={this.props.pathname}>
         <Header
@@ -90,7 +79,7 @@ export default class OrderDetail extends Component {
         </div>
         {
           address ? 
-            this.renderReciverInfo():
+            <ReceiverInfo address={address} area={area} onClick={this.onConfirm}/>:
             <div className={styles.addAddressWrapper} onClick={() => {
               Router.push({
                 pathname: '/addAddress'

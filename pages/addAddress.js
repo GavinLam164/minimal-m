@@ -2,23 +2,41 @@ import { Component } from "react";
 import Layout from "@components/Layout";
 import Cascader from '@components/Common/Cascader'
 import Header from "@components/Common/Header";
-import {findAllArea, addAddress} from '@api/home'
+import Confirm from "@components/Common/Confirm";
+import Router from 'next/router'
+import {findAllArea, addAddress, addressDetail} from '@api/home'
 import styles from './styles.scss'
 export default class Home extends Component {
-  static async getInitialProps({ pathname }) {
+  static async getInitialProps({  query }) {
     const{data} = await findAllArea()
-    return { pathname, areaList: data };
+    let address, area;
+    if(query.addressId){
+      const {addressId} = query
+      const res = await addressDetail({addressId})
+      address = res.data.address
+      area = res.data.area
+    }
+  
+    return {  areaList: data, address, area };
   }
 
   constructor(props) {
     super()
-    const {areaList} = props
-    this.state = {
-      areaList: this.converAreaList(areaList),
+    const {areaList, address, area } = props
+    const obj = {
       areaIds: [],
       receiver: '',
       receiverPhone: '',
       addressDetail: ''
+    }
+    Object.assign(obj, address)
+    if(area) {
+      obj.areaIds = area.areaIdPath.split('_')
+    }
+    console.log(address, area)
+    this.state = {
+      areaList: this.converAreaList(areaList),
+      ...obj
     }
   }
 
@@ -44,6 +62,7 @@ export default class Home extends Component {
         receiverPhone,
         addressDetail,
         areaIds,
+        addressId
       } = this.state
 
     await addAddress({
@@ -51,7 +70,9 @@ export default class Home extends Component {
         receiver,
         receiverPhone,
         addressDetail,
+        addressId
     })
+    Router.back()
   }
 
   render() {
@@ -80,15 +101,15 @@ export default class Home extends Component {
       <Cascader value={this.state.areaIds} areaList={this.state.areaList} onChange={this.onAreaSelectChange}/>
       <div className={styles.listItem}>
         <span className={styles.listLabel} value={this.state.addressDetail} >详细地址：</span>
-        <input className={styles.input} onChange={(e) => {
+        <input className={styles.input} value={this.state.addressDetail} onChange={(e) => {
             this.setState({
                 addressDetail: e.target.value
             })
         }}/>
       </div>
-      <div className={styles.confirmWrapper}>
-        <button className={styles.confirm} onClick={this.onConfirm}>保存</button>
-      </div>
+      <Confirm onConfirm={this.onConfirm}>
+        保存
+      </Confirm>
     </Layout>;
   }
 }

@@ -8,21 +8,21 @@ const option = {
 const app = next(option)
 const handler = app.getRequestHandler()
 ;(async () => {
-    await app.prepare()
+  await app.prepare()
 
-    const proxyMiddleware = require('http-proxy-middleware')
-    const server = express()
-const devProxy = {
-'/api': {
-    target: 'http://localhost:8201',
-    pathRewrite: {
-      '^/api': '/'
-    },
-    changeOrigin: true,
-    logLevel: 'debug',
-    secure: false
-}
-}
+  const proxyMiddleware = require('http-proxy-middleware')
+  const server = express()
+  const devProxy = {
+    '/api': {
+        target: 'http://localhost:8201',
+        pathRewrite: {
+          '^/api': ''
+        },
+        changeOrigin: true,
+        logLevel: 'debug',
+        secure: false
+    }
+  }
   Object.keys(devProxy).forEach(context => {
     server.use(proxyMiddleware(context, devProxy[context]))
   })

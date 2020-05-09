@@ -1,0 +1,15 @@
+.confirmWrapper {
+    padding: 8px 15px;
+    box-sizing: border-box;
+    width: 100%;
+
+    .confirm {
+        outline: none;
+        width: 100%;
+        border: none;
+        color: white;
+        padding: 8px;
+        border-radius: 25px;
+        background-color: #ff1d5c;
+    }
+}
