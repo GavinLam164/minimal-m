@@ -60,8 +60,6 @@
   }
 }
 
-
-
 .skuList {
   padding: 10px 16px;
   display: flex;
@@ -93,7 +91,8 @@
       /*超出部分隐藏*/
     }
 
-    .spec {}
+    .spec {
+    }
   }
 
   .priceInfo {
@@ -101,9 +100,11 @@
     font-weight: 400;
     color: rgba(99, 99, 99, 1);
 
-    .price {}
+    .price {
+    }
 
-    .num {}
+    .num {
+    }
   }
 }
 
@@ -135,9 +136,11 @@
     height: 12px;
   }
 
-  .title {}
+  .title {
+  }
 
-  .desc {}
+  .desc {
+  }
 }
 
 .btns {
@@ -187,8 +190,6 @@
   }
 }
 
-
-
 .addAddressWrapper {
   font-size: 14px;
   padding: 15px;
@@ -202,5 +203,39 @@
 
   .addAddressTitle {
     margin-left: 10px;
+  }
+}
+
+.login {
+  padding: 12px;
+  .inputItem {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .linkItem {
+    @extend .inputItem;
+    justify-content: space-between;
+  }
+
+  .inputLabel {
+    width: 80px;
+  }
+
+  .input {
+    border: none;
+    outline: none;
+  }
+
+  .labelArrow {
+    width: 10px;
+    height: 18px;
+  }
+
+  .registBtn {
+    justify-content: flex-end;
+    border-bottom: none;
   }
 }

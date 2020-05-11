@@ -1,1 +1,1 @@
-self.__BUILD_MANIFEST = (function(a,b){return {"/productDetail":[a,b],"/user":[a,b]}}("static\u002Fcss\u002Fstyles.chunk.css","static\u002Fchunks\u002Fstyles.js"));self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()
+self.__BUILD_MANIFEST = (function(a,b){return {"/addAddress":[a,b],"/addressList":[a,b],"/cart":[a,b],"/home":[a,b],"/user":[a,b]}}("static\u002Fcss\u002Fstyles.chunk.css","static\u002Fchunks\u002Fstyles.js"));self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()

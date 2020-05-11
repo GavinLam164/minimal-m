@@ -1,6 +1,15 @@
 
 import axios from 'axios';
+import Cookie from 'js-cookie'
 import qs from 'qs'
+
+const getCookie = (key, req) => {
+  if (req) {
+    return req.cookies[key]
+  }
+  return Cookie.get(key)
+}
+
 
 let baseURL = '';
 if(process.browser) {
@@ -25,10 +34,22 @@ instance.defaults.transformRequest = [
     }
   },
 ];
+let req = null;
+export const setRequest = (request) => {
+  req = request
+}
+instance.interceptors.request.use((config) => {
+  const token = getCookie('webToken', req)
+  const headers = { ...config.headers };
+  headers.token = token
+  return {
+    ...config,
+    headers
+  }
+})
 instance.interceptors.response.use((resp)=> {
     const { data } = resp;
     if (data.code !== 200) {
-      Notification.error(data.msg);
       throw new Error(data.msg);
     }
     return data;

@@ -14,80 +14,54 @@ export const findSkuList = (params) => get('/product/sku/list', params)
 
 export const addCartList = (params) => post('/cart/add', params, {
     headers: {
-        'token': '345038b05aa4dafa4329b9577d5f7e38',
         'Content-Type': 'application/json'
     }
 })
 
-export const findCartList = () => get('/cart/list', {}, {
-    headers: {
-        'token': '345038b05aa4dafa4329b9577d5f7e38'
-    }
-})
+export const findCartList = () => get('/cart/list')
 
 export const findCategoryList = () => get('/category/back/findByParentId')
 
 
-export const selectCart = (params) => get('/cart/select', params, {
-    headers: {
-        'token': '345038b05aa4dafa4329b9577d5f7e38'
-    }
-})
+export const selectCart = (params) => get('/cart/select', params)
 
 
-export const selectList = () => get('/cart/selectList', null, {
-    headers: {
-        'token': '345038b05aa4dafa4329b9577d5f7e38'
-    }
-})
+export const selectList = () => get('/cart/selectList')
 
 export const findAllArea = () => get('/user/findAllArea')
 
 
 export const addAddress = (params) => post('/user/addAddress', params, {
     headers: {
-        'token': '345038b05aa4dafa4329b9577d5f7e38',
         'Content-Type': 'application/json'
     }
 })
 
 
 
-export const currentSelectAddress = (params) => get('/user/currentSelectAddress', params, {
+export const currentSelectAddress = (params) => get('/user/currentSelectAddress', params)
+
+
+
+export const addressList = () => get('/user/addressList')
+
+
+export const addressDetail = (params) => get('/user/addressDetail', params)
+
+export const setSelectAddress = (params) => post('/user/setSelectAddress', params)
+
+export const cartDelete = (params) => post('/cart/delete', params)
+
+export const userLogin = (params) => post('/console/user/login', params, {
     headers: {
-        'token': '345038b05aa4dafa4329b9577d5f7e38',
+        'Content-Type': 'application/json'
     }
 })
 
-
-export const getBasicInfo = (params) => get('/user/getBasicInfo', params, {
+export const userRegist = (params) => post('/console/user/regist', params, {
     headers: {
-        'token': '345038b05aa4dafa4329b9577d5f7e38',
+        'Content-Type': 'application/json'
     }
 })
 
-
-export const addressList = () => get('/user/addressList', null, {
-    headers: {
-        'token': '345038b05aa4dafa4329b9577d5f7e38',
-    }
-})
-
-
-export const addressDetail = (params) => get('/user/addressDetail', params, {
-    headers: {
-        'token': '345038b05aa4dafa4329b9577d5f7e38',
-    }
-})
-
-export const setSelectAddress = (params) => post('/user/setSelectAddress', params, {
-    headers: {
-        'token': '345038b05aa4dafa4329b9577d5f7e38',
-    }
-})
-
-export const cartDelete = (params) => post('/cart/delete', params, {
-    headers: {
-        'token': '345038b05aa4dafa4329b9577d5f7e38',
-    }
-})
+export const getBasicInfo = () => get('/user/getBasicInfo')
