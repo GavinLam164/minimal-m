@@ -143,7 +143,7 @@ const getCookie = (key, req) => {
 let baseURL = '';
 
 if (false) {} else {
-  baseURL = 'http://localhost:8201';
+  baseURL = 'http://192.168.56.102:8201';
 }
 
 const instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({

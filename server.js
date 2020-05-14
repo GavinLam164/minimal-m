@@ -14,20 +14,23 @@ const handler = app.getRequestHandler()
   const proxyMiddleware = require('http-proxy-middleware')
   const server = express()
   server.use(cookieParser())
-  const devProxy = {
-    '/api': {
-        target: 'http://localhost:8201',
-        pathRewrite: {
-          '^/api': ''
-        },
-        changeOrigin: true,
-        logLevel: 'debug',
-        secure: false
+  if(process.NODE_ENV === 'development') {
+    const devProxy = {
+      '/api': {
+          target: 'http://localhost:8201',
+          pathRewrite: {
+            '^/api': ''
+          },
+          changeOrigin: true,
+          logLevel: 'debug',
+          secure: false
+      }
     }
+    Object.keys(devProxy).forEach(context => {
+      server.use(proxyMiddleware(context, devProxy[context]))
+    })
   }
-  Object.keys(devProxy).forEach(context => {
-    server.use(proxyMiddleware(context, devProxy[context]))
-  })
+
 
 server.get('*', (req,res) => handler(req,res))
 

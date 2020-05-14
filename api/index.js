@@ -15,7 +15,7 @@ let baseURL = '';
 if(process.browser) {
     baseURL = '/api'
 }else {
-    baseURL = 'http://localhost:8201'
+    baseURL = 'http://192.168.56.102:8201'
 }
 const instance = axios.create({
   baseURL,
