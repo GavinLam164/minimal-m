@@ -2,6 +2,8 @@
 const next = require('next')
 const express = require('express')
 const cookieParser = require('cookie-parser')
+
+const port = process.env.PORT || 3001
 const dev = process.env.NODE_ENV !== 'production'
 const option = {
   dev
@@ -30,10 +32,7 @@ const handler = app.getRequestHandler()
       server.use(proxyMiddleware(context, devProxy[context]))
     })
   }
-
-
-server.get('*', (req,res) => handler(req,res))
-
-await server.listen(3001)
-console.log('sucess: 3001')
+  server.get('*', (req,res) => handler(req,res))
+  await server.listen(port)
+  console.log('sucess: ', port)
 })()
