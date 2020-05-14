@@ -12,11 +12,12 @@ const getCookie = (key, req) => {
 
 
 let baseURL = '';
-if(process.browser) {
-    baseURL = '/api'
-}else {
-    baseURL = 'http://192.168.56.102:8201'
-}
+  if(process.browser) {
+      baseURL = '/api'
+  }else {
+      baseURL = 'http://192.168.56.102:8201'
+  }
+
 const instance = axios.create({
   baseURL,
   withCredentials: true,
