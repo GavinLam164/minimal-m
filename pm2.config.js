@@ -2,11 +2,12 @@ module.exports = {
     apps: [
       {
         name: 'minimal-m',
-        script: 'server/index.js',
+        script: 'server.js',
+        exec_mode: 'cluster',
         watch: false,
         env_dev: {
           RUNTIME_ENV: 'dev',
-          NODE_ENV: 'development'
+          NODE_ENV: 'development',
         },
         env_prod: {
           RUNTIME_ENV: 'prod',
