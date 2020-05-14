@@ -3,7 +3,7 @@ const next = require('next')
 const express = require('express')
 const cookieParser = require('cookie-parser')
 
-const port = process.env.PORT || 3001
+const port = process.env.PORT || 3000
 const dev = process.env.NODE_ENV !== 'production'
 const option = {
   dev
@@ -16,7 +16,7 @@ const handler = app.getRequestHandler()
   const proxyMiddleware = require('http-proxy-middleware')
   const server = express()
   server.use(cookieParser())
-  if(process.NODE_ENV === 'development') {
+  if(dev) {
     const devProxy = {
       '/api': {
           target: 'http://localhost:8201',
