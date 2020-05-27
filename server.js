@@ -5,6 +5,8 @@ const cookieParser = require('cookie-parser')
 
 const port = process.env.PORT || 3000
 const dev = process.env.NODE_ENV !== 'production'
+console.log('-----------------------------env')
+console.log(process.env.NODE_ENV )
 const option = {
   dev
 }
@@ -19,7 +21,7 @@ const handler = app.getRequestHandler()
   if(dev) {
     const devProxy = {
       '/api': {
-          target: 'http://localhost:8201',
+          target: 'http://192.168.56.102/api',
           pathRewrite: {
             '^/api': ''
           },
