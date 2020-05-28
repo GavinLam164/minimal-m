@@ -4,7 +4,10 @@ import Confirm from '@components/Common/Confirm'
 import Cookie from 'js-cookie'
 import Router from 'next/router'
 import {userLogin} from '@api/home'
+import { Logo } from '@components/Common/Logo'
+import { Toast } from 'antd-mobile';
 import md5 from 'md5'
+
 export default class Login extends Component {
   static async getInitialProps({ pathname }) {
     return {}
@@ -25,14 +28,17 @@ export default class Login extends Component {
     })
     window.localStorage.setItem('webToken', accessToken)
     Cookie.set('webToken', accessToken)
-    Router.push({
-        pathname: '/home'
-    })
+    Toast.info('登录成功', 2, () => {
+        Router.push({
+            pathname: '/home'
+        })
+    });
   }
 
   render() {
     return (
      <div className={styles.login}>
+         <Logo />
          <div className={styles.inputItem}>
              <div className={styles.inputLabel}>
                 手机号

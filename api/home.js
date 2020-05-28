@@ -58,6 +58,12 @@ export const userLogin = (params) => post('/console/user/login', params, {
     }
 })
 
+export const userLogout = (params) => post('/console/user/logout', params, {
+    headers: {
+        'Content-Type': 'application/json'
+    }
+})
+
 export const userRegist = (params) => post('/console/user/regist', params, {
     headers: {
         'Content-Type': 'application/json'

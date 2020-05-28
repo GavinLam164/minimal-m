@@ -6,7 +6,8 @@ import ProductItem from "@components/Common/ProductItem";
 import {findCartList, selectCart, cartDelete} from '@api/home'
 import Router from 'next/router'
 import styles from './styles.scss'
-
+import { Toast, Modal } from "antd-mobile";
+const alert = Modal.alert;
 
 export default class Cart extends Component {
   static async getInitialProps({ pathname }) {
@@ -92,13 +93,31 @@ export default class Cart extends Component {
   }
 
   onPay = () => {
+    const hasSelected = this.state.skuList.filter(v => v.selected)
+    if(hasSelected.length == 0) {
+      Toast.info("请选择需要结算的商品", 2)
+      return
+    }
     Router.push({
       pathname: '/orderDetail'
     })
   }
 
   onDel = async() => {
-    await cartDelete()
+    const hasSelected = this.state.skuList.filter(v => v.selected)
+    if(hasSelected.length == 0) {
+      Toast.info("请选择需要删除的商品", 2)
+      return
+    }
+    alert('删除购物车商品', '你确定要删除吗？', [
+      { text: '取消', onPress: () => console.log('cancel') },
+      { text: '确定', onPress: async () => {
+        await cartDelete()
+        Toast.info('删除成功', 2)
+        this.reloadCartList()
+      } },
+    ])
+ 
   }
 
   render() {

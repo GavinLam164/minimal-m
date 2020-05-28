@@ -1,12 +1,12 @@
 .swiper {
   height: 265px;
   width: 100vw;
-
-  .img {
-    width: 100%;
-  }
 }
 
+.img {
+  height: 265px;
+  width: 100%;
+}
 .search {
   position: absolute;
   z-index: 200;

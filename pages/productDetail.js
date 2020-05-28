@@ -10,6 +10,7 @@ import Bottom from "@components/ProductDetail/Bottom";
 import {findSpuBasicInfo, findCartList, addCartList} from '@api/home'
 import Router from 'next/router'
 import styles from "./styles.scss";
+import {Toast} from 'antd-mobile'
 
 
 export default class ProductDetail extends Component {
@@ -28,13 +29,14 @@ export default class ProductDetail extends Component {
 
   onAddCart = () => {
     if(!this.sku){
+      Toast.info('请选择商品规格', 2)
       return
     }
     addCartList(this.sku)
+    Toast.info('添加成功', 2)
   }
 
   onNowPay = () => {
-    console.log('11111111')
     if(!this.sku){
       return
     }

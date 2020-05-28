@@ -81,7 +81,11 @@ export default class SelectSku extends Component {
         <img className={styles.img} src="/static/icon/arrow.png" />
       </div>
       <Mask visible={this.state.visible}>
-        <Content>
+        <Content onClose={() => {
+          this.setState({
+            visible: false
+          })
+        }}>
         <ProductItem title={spuInfo.spuName}
           src={!selectSku ? spuInfo.bannerImageList[0].spuImagePath: selectSku.skuImage.skuImagePath}
           price={!selectSku ? spuInfo.spuPrice: selectSku.skuPrice}

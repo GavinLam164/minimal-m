@@ -15,7 +15,7 @@ export default class MyDocument extends Document {
           />
           <link rel="stylesheet" href="/static/css/swiper.css" />
         </Head>
-        <body style={{ margin: 0 }}>
+        <body style={{ margin: 0 , background: 'white'}}>
           <Main />
           <NextScript />
         </body>

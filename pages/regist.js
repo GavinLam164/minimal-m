@@ -3,6 +3,8 @@ import styles from './styles.scss'
 import Confirm from '@components/Common/Confirm'
 import {userRegist} from '@api/home'
 import Router from 'next/router'
+import { Logo } from '@components/Common/Logo'
+import { Toast } from 'antd-mobile'
 import md5 from 'md5'
 export default class Login extends Component {
   static async getInitialProps({ pathname }) {
@@ -24,14 +26,18 @@ export default class Login extends Component {
         phone,
         password: md5(password)
     })
-    Router.push({
-        pathname: '/login'
+    Toast.info('注册成功', 2, () => {
+        Router.push({
+            pathname: '/login'
+        })
     })
+    
   }
 
   render() {
     return (
      <div className={styles.login}>
+        <Logo/>
         <div className={styles.inputItem}>
              <div className={styles.inputLabel}>
                 昵称
