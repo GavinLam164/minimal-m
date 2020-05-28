@@ -68,6 +68,16 @@ export default class Login extends Component {
                  })
              }}/>
          </div>
+         <div className={[styles.inputItem, styles.registBtn].join(' ')} onClick={() => {
+             Router.push({
+                pathname: '/login'
+             })
+         }}>
+             <div className={styles.inputLabel}>
+                已有账号？登录
+             </div>
+             <img className={styles.labelArrow} src={'/static/icon/arrow.png'} />
+         </div>
          <Confirm onConfirm={this.onConfirm}>
             注册
          </Confirm>
